@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 namespace API.Controllers;
 [ApiController]
 [Route("api/[controller]")] ///api/users
-public class UsersController(DataContext context) : ControllerBase // here we are using the dpendency injection for utilise the db context or connection string form the program.cs file using theconstructors it's an best example
+public class UsersController(DataContext context) : ControllerBase // here we are using the dpendency injection for utilise the db context or connection string form the program.cs file using the constructors it's an best example
 {
 
     [HttpGet]
