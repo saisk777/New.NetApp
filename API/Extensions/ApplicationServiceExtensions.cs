@@ -1,6 +1,7 @@
 using System;
 using API.Data;
 using API.DTOs;
+using API.Helpers;
 using API.Interfaces;
 using API.Services;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
@@ -22,7 +23,9 @@ public static class ApplicationServiceExtensions
         services.AddCors();
         services.AddScoped<ITokenService, TokenService>();
         services.AddScoped<IUserRepository, UserRepository>();
+        services.AddScoped<IPhotoService, Photoservice>();
         services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+        services.Configure<AzureBlobSettings>(config.GetSection("AzureBlobStorage"));
 
 
         return services;
